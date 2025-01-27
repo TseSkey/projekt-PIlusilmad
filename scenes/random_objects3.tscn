@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bicsamdph2qlq"]
+
+[ext_resource type="Texture2D" uid="uid://d3r6knqbvl4m" path="res://assets/sprites/kandik.png" id="1_s2apv"]
+[ext_resource type="PackedScene" uid="uid://cmmae5ue53qub" path="res://scenes/killzone.tscn" id="2_3283e"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vah5s"]
+radius = 6.0
+height = 60.0
+
+[node name="RandomObject" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6, 11)
+scale = Vector2(1.1875, 1)
+texture = ExtResource("1_s2apv")
+
+[node name="killzone" parent="Sprite2D" instance=ExtResource("2_3283e")]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/killzone"]
+position = Vector2(-1, -7)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_vah5s")
