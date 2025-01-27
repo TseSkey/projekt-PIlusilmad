@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqh0ntxxavydn"]
+
+[ext_resource type="Script" path="res://scenes/ground.gd" id="1_wse0p"]
+[ext_resource type="Texture2D" uid="uid://clx2mxx0cbo6l" path="res://assets/sprites/base-1.png.png" id="2_dybx6"]
+
+[node name="Ground" type="Node2D"]
+script = ExtResource("1_wse0p")
+
+[node name="ground1" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ground1"]
+position = Vector2(15, -16)
+scale = Vector2(1, 0.714)
+texture = ExtResource("2_dybx6")
+
+[node name="ground2" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="ground2"]
+position = Vector2(351, -16)
+scale = Vector2(1, 0.714)
+texture = ExtResource("2_dybx6")
+
+[connection signal="body_entered" from="ground1" to="." method="_on_body_entered"]
+[connection signal="body_entered" from="ground2" to="." method="_on_body_entered"]
