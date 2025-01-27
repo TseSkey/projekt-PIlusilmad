@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://bgxlhfmpp55wp"]
+
+[ext_resource type="Texture2D" uid="uid://dq5uhseyoukyn" path="res://assets/sprites/ullarANIMETED.png" id="1_gtr71"]
+[ext_resource type="Texture2D" uid="uid://bs4bwiyyjdpco" path="res://assets/sprites/ullar.png" id="1_s76k0"]
+[ext_resource type="PackedScene" uid="uid://cmmae5ue53qub" path="res://scenes/killzone.tscn" id="2_y16kf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qx4r"]
+atlas = ExtResource("1_gtr71")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bs4lc"]
+atlas = ExtResource("1_gtr71")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uw7gk"]
+atlas = ExtResource("1_gtr71")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wsmo"]
+atlas = ExtResource("1_gtr71")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rfgb2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qx4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bs4lc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uw7gk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wsmo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5o3qf"]
+radius = 24.0795
+height = 84.0205
+
+[node name="RandomObjects" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4.76837e-07, 0)
+scale = Vector2(0.605469, 0.566406)
+sprite_frames = SubResource("SpriteFrames_rfgb2")
+autoplay = "default"
+frame_progress = 0.969068
+
+[node name="killzone" parent="AnimatedSprite2D" instance=ExtResource("2_y16kf")]
+position = Vector2(0, -1)
+rotation = -1.5708
+scale = Vector2(0.609375, 0.609375)
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/killzone"]
+position = Vector2(9.58585, -1.69396)
+shape = SubResource("CapsuleShape2D_5o3qf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.609375, 0.609375)
+texture = ExtResource("1_s76k0")
