@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://mkucsdsatv7i"]
+
+[ext_resource type="Texture2D" uid="uid://c8gp04wbjgm14" path="res://assets/sprites/moblakast (1).png" id="1_7sgfv"]
+[ext_resource type="PackedScene" uid="uid://cmmae5ue53qub" path="res://scenes/killzone.tscn" id="2_vivgn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vix1g"]
+atlas = ExtResource("1_7sgfv")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dj7b"]
+atlas = ExtResource("1_7sgfv")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66hme"]
+atlas = ExtResource("1_7sgfv")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1y12"]
+atlas = ExtResource("1_7sgfv")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g6b8t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vix1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dj7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66hme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1y12")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0wr2k"]
+radius = 42.953
+height = 110.522
+
+[node name="RandomObject" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -6)
+scale = Vector2(0.75, 0.71875)
+sprite_frames = SubResource("SpriteFrames_g6b8t")
+autoplay = "default"
+frame = 2
+frame_progress = 0.240763
+
+[node name="killzone" parent="AnimatedSprite2D" instance=ExtResource("2_vivgn")]
+position = Vector2(1, -1.42109e-14)
+scale = Vector2(0.582031, 0.524782)
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/killzone"]
+position = Vector2(-3.43624, 1.90555)
+shape = SubResource("CapsuleShape2D_0wr2k")
