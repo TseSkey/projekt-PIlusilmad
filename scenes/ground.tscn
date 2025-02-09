@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dqh0ntxxavydn"]
 
-[ext_resource type="Script" path="res://scenes/ground.gd" id="1_wse0p"]
+[ext_resource type="Script" path="res://scripts/ground.gd" id="1_wse0p"]
 [ext_resource type="Texture2D" uid="uid://clx2mxx0cbo6l" path="res://assets/sprites/base-1.png.png" id="2_dybx6"]
 
 [node name="Ground" type="Node2D"]
