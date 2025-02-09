@@ -44,3 +44,4 @@ shape = SubResource("WorldBoundaryShape2D_vr5fk")
 position = Vector2(219, 3)
 
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("6_0sq4f")]
+autoplay = false
