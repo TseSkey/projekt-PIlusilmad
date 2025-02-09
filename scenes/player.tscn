@@ -40,16 +40,16 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2s1mp"]
-radius = 5.0
-height = 10.0
+radius = 6.0
+height = 12.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_fhyhy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -13)
-scale = Vector2(1.125, 1.0625)
+position = Vector2(1, -14)
+scale = Vector2(1.34375, 1.1875)
 sprite_frames = SubResource("SpriteFrames_7kn4l")
 animation = &"idle"
 autoplay = "idle"
