@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1hfhp2swfhe1"]
+
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_g0v17"]
+[ext_resource type="FontFile" uid="uid://brhxlh5sahgrj" path="res://assets/fonts/AmericanCaptain-MdEY.otf" id="2_h6qsp"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_g0v17")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 32
+
+[node name="PointsLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.790108, 0.768886, 0.900069, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_h6qsp")
+theme_override_font_sizes/font_size = 64
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
