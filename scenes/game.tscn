@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfs8h5jxpmppc"]
+[gd_scene load_steps=8 format=3 uid="uid://dfs8h5jxpmppc"]
 
 [ext_resource type="PackedScene" uid="uid://b4h28xgh81t7w" path="res://scenes/player.tscn" id="1_li35x"]
 [ext_resource type="PackedScene" uid="uid://dqh0ntxxavydn" path="res://scenes/ground.tscn" id="1_s5s0k"]
+[ext_resource type="PackedScene" uid="uid://cvngmbm7w2w7b" path="res://scenes/kutsekakaart_coin.tscn" id="2_7nlq7"]
+[ext_resource type="PackedScene" uid="uid://dy8hm0w6hqeik" path="res://scenes/spawner.tscn" id="3_iyptw"]
+[ext_resource type="PackedScene" uid="uid://d1hfhp2swfhe1" path="res://scenes/ui.tscn" id="5_hd8ec"]
+[ext_resource type="PackedScene" uid="uid://du3p72mh46ran" path="res://scenes/music.tscn" id="6_0sq4f"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vr5fk"]
 
@@ -10,11 +14,15 @@
 [node name="Ground" parent="." instance=ExtResource("1_s5s0k")]
 position = Vector2(9, 77)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_li35x")]
+[node name="player" parent="." instance=ExtResource("1_li35x")]
+
+[node name="spawner" parent="." instance=ExtResource("3_iyptw")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1, -12)
 zoom = Vector2(4, 4)
+
+[node name="UI" parent="." instance=ExtResource("5_hd8ec")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -31,3 +39,8 @@ shape = SubResource("WorldBoundaryShape2D_vr5fk")
 position = Vector2(-143, -33)
 rotation = 1.5708
 shape = SubResource("WorldBoundaryShape2D_vr5fk")
+
+[node name="kutsekakaart_coin" parent="." instance=ExtResource("2_7nlq7")]
+position = Vector2(219, 3)
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("6_0sq4f")]
