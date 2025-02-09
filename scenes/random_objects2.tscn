@@ -40,7 +40,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0wr2k"]
-radius = 42.953
+radius = 45.8166
 height = 110.522
 
 [node name="RandomObject" type="Node2D"]
@@ -60,5 +60,5 @@ collision_layer = 8
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/killzone"]
-position = Vector2(-3.43624, 1.90555)
+position = Vector2(-6.29978, 2.6512)
 shape = SubResource("CapsuleShape2D_0wr2k")
