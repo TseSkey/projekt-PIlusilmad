@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://du3p72mh46ran"]
+
+[ext_resource type="AudioStream" uid="uid://buyr0ekmfg2ag" path="res://assets/music/Jeremy Blake - Powerup!  NO COPYRIGHT 8-bit Music.mp3" id="1_f4r15"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_f4r15")
+autoplay = true
+bus = &"Music"
